@@ -3,3 +3,5 @@ export type ExampleType = {
   id: string;
   name: string;
 };
+
+export type { TrpcRouter } from '../../apps/backend/src/trpc/trpc.router';
