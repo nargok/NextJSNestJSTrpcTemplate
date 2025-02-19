@@ -1,6 +1,7 @@
 import { trpc } from "@/utils/trpc";
 import { User } from "@nestjs-trpc-next/shared";
 
+// TODO frontendのコードをpacakges/frontendに移動する
 const Home = async () => {
   const users = await trpc.users.findAll.query();
 
