@@ -1,15 +1,16 @@
 {
-  "name": "frontend",
+  "name": "@nestjs-trpc-next/frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@nestjs-trpc-next/shared": "workspace:*",
+    "@nestjs-trpc-next/backend": "workspace:*",
     "@trpc/client": "^10.45.2",
     "next": "15.1.7",
     "react": "^19.0.0",
