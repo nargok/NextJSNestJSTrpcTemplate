@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from '../app.controller';
+import { AppUseCase } from '../../../application/usecases/app.usecase';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -8,7 +8,7 @@ describe('AppController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [AppUseCase],
     }).compile();
 
     appController = app.get<AppController>(AppController);
@@ -19,4 +19,4 @@ describe('AppController', () => {
       expect(appController.getHello()).toBe('Hello World!');
     });
   });
-});
+}); 
