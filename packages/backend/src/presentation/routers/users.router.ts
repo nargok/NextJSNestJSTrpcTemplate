@@ -1,7 +1,7 @@
-import { UsersService } from './users.service';
 import { Router, Query } from 'nestjs-trpc';
 import { z } from 'zod';
 import { User } from '@nestjs-trpc-next/shared';
+import { UsersService } from '../../application/services/users.service';
 
 const userSchema = z.object({
   id: z.string(),
@@ -14,7 +14,6 @@ export class UsersRouter {
 
   @Query({ output: z.array(userSchema) })
   async findAll(): Promise<User[]> {
-    const users = await this.usersService.findAll();
-    return users;
+    return this.usersService.findAll();
   }
 }
